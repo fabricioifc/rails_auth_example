@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Login</title>
-</head>
-<body style="font-family: Arial; text-align: center; margin-top: 100px;">
+<%= content_for :title, "Home" %>
 
-  <h1>Login</h1>
-
-  <a href="/auth/github" style="
-    display: inline-block;
-    padding: 12px 20px;
-    background: #24292e;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 16px;
-  ">
-    Login com GitHub
-  </a>
-
-</body>
-</html>
+<div class="home-hero">
+  <h1>Bem-vindo</h1>
+  <% if session[:user_id] %>
+    <p>Você já está logado. <a href="/protected">Acessar área protegida</a></p>
+  <% else %>
+    <p>Faça login com sua conta GitHub para continuar.</p>
+    <a href="/auth/github" class="btn btn--dark">Login com GitHub</a>
+  <% end %>
+</div>

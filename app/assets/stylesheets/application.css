@@ -8,3 +8,200 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/* ============================================================
+   Base
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #222;
+}
+
+main {
+  padding: 40px 24px 80px;
+}
+
+/* ============================================================
+   Navbar
+   ============================================================ */
+.navbar {
+  background: #24292e;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 52px;
+}
+
+.navbar__brand {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar__link {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar__link:hover {
+  background: #3a3f44;
+  color: white;
+}
+
+.navbar__link--outline {
+  border-color: #555;
+}
+
+.navbar__link--outline:hover {
+  background: transparent;
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.navbar__logout-form {
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar__logout-btn {
+  background: transparent;
+  color: #ccc;
+  border: 1px solid #555;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.navbar__logout-btn:hover {
+  background: transparent;
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.footer {
+  background: #f5f5f5;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 16px;
+  font-size: 13px;
+  color: #666;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ============================================================
+   Flash messages
+   ============================================================ */
+.flash {
+  padding: 12px 20px;
+  margin-bottom: 24px;
+  border-radius: 6px;
+  color: white;
+}
+
+.flash--notice {
+  background: #2ecc71;
+}
+
+.flash--alert {
+  background: #e74c3c;
+}
+
+/* ============================================================
+   Home
+   ============================================================ */
+.home-hero {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.home-hero p {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+/* ============================================================
+   Buttons / Links
+   ============================================================ */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.btn--dark {
+  background: #24292e;
+  color: white;
+}
+
+.btn--dark:hover {
+  background: #3a3f44;
+}
+
+/* ============================================================
+   Users table
+   ============================================================ */
+.page-title {
+  margin-bottom: 24px;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.users-table thead tr {
+  background: #24292e;
+  color: white;
+}
+
+.users-table th,
+.users-table td {
+  padding: 10px 16px;
+  text-align: left;
+}
+
+.users-table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+.users-table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.users-table--empty {
+  color: #888;
+}

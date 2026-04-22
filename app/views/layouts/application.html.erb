@@ -24,6 +24,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'shared/navbar' %>
+    <main style="padding: 40px 24px 80px;">
+      <%= render 'shared/messages' %>
+      <%= yield %>
+    </main>
+    <%= render 'shared/footer' %>
   </body>
 </html>

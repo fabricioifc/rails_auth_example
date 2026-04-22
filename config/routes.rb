@@ -20,4 +20,5 @@ Rails.application.routes.draw do
     delete '/logout', to: 'sessions#destroy'
 
     get '/protected', to: 'protected#index'
+    get '/users', to: 'users#index'
 end

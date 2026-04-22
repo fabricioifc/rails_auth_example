@@ -1,0 +1,28 @@
+<h1 class="page-title">Usuários cadastrados</h1>
+
+<% if @users.empty? %>
+  <p class="users-table--empty">Nenhum usuário encontrado.</p>
+<% else %>
+  <table class="users-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Provider</th>
+        <th>Criado em</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.provider %></td>
+          <td><%= user.created_at.strftime('%d/%m/%Y %H:%M') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
