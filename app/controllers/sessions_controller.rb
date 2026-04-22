@@ -13,6 +13,12 @@ class SessionsController < ApplicationController
 
     user = User.find_by(provider_uid_column => uid)
     user ||= User.find_by(email: email) if email.present?
+
+    if user.nil? && email.blank?
+      redirect_to '/', alert: 'Não foi possível obter seu e-mail do provider.'
+      return
+    end
+
     user ||= User.new(email: email)
 
     user.name = auth.info.name if auth.info.name.present?

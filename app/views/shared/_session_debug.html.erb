@@ -1,0 +1,25 @@
+<% data = session_debug_data %>
+
+<section class="session-debug" aria-label="Painel didático da sessão">
+  <h2 class="session-debug__title">Painel didático da sessão</h2>
+
+  <dl class="session-debug__grid">
+    <dt>Autenticado</dt>
+    <dd><%= data[:authenticated] ? 'Sim' : 'Não' %></dd>
+
+    <dt>session[:user_id]</dt>
+    <dd><%= data[:session_user_id].presence || 'nil' %></dd>
+
+    <dt>Usuário</dt>
+    <dd><%= data[:user_name].presence || 'nil' %></dd>
+
+    <dt>E-mail</dt>
+    <dd><%= data[:user_email].presence || 'nil' %></dd>
+
+    <dt>Host da requisição</dt>
+    <dd><%= data[:request_host] %></dd>
+
+    <dt>Protocolo</dt>
+    <dd><%= data[:request_scheme] %></dd>
+  </dl>
+</section>

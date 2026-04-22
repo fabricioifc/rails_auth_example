@@ -136,6 +136,40 @@ main {
 }
 
 /* ============================================================
+   Session debug
+   ============================================================ */
+.session-debug {
+  margin-bottom: 24px;
+  border: 1px solid #d8dde5;
+  border-radius: 8px;
+  background: #f7f9fc;
+  padding: 16px;
+}
+
+.session-debug__title {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.session-debug__grid {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 8px 12px;
+}
+
+.session-debug__grid dt {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.session-debug__grid dd {
+  margin: 0;
+  color: #222;
+}
+
+/* ============================================================
    Home
    ============================================================ */
 .home-hero {

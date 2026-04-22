@@ -7,7 +7,8 @@ end
 
 OmniAuth.config.full_host = lambda do |env|
   configured_host = ENV['APP_HOST'].to_s.strip
-  next configured_host unless configured_host.empty?
+  use_configured_host = configured_host.present? && Rails.env.production?
+  next configured_host if use_configured_host
 
   scheme = env['HTTP_X_FORWARDED_PROTO'] || env['rack.url_scheme'] || 'http'
   host = env['HTTP_X_FORWARDED_HOST'] || env['HTTP_HOST']

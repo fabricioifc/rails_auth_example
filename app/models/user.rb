@@ -4,6 +4,8 @@ class User < ApplicationRecord
 		"twitter2" => "twitter_uid"
 	}.freeze
 
+	validates :email, uniqueness: { case_sensitive: false }, allow_nil: true
+
 	def self.provider_uid_column(provider)
 		PROVIDER_UID_COLUMNS[provider.to_s]
 	end

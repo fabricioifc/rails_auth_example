@@ -10,16 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_22_115805) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_22_154000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "email"
+    t.string "github_uid"
     t.string "name"
     t.string "provider"
+    t.string "twitter_uid"
     t.string "uid"
     t.datetime "updated_at", null: false
+    t.index "lower((email)::text)", name: "index_users_on_lower_email", unique: true
+    t.index ["github_uid"], name: "index_users_on_github_uid", unique: true
+    t.index ["twitter_uid"], name: "index_users_on_twitter_uid", unique: true
   end
 end

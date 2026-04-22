@@ -5,8 +5,6 @@
     <% if session[:user_id] %>
       <a href="/users" class="navbar__link">Usuários</a>
       <%= button_to 'Sair', '/logout', method: :delete, class: 'navbar__logout-btn', form: { class: 'navbar__logout-form' } %>
-    <% else %>
-      <a href="/auth/github" class="navbar__link navbar__link--outline">Login com GitHub</a>
     <% end %>
   </div>
 </nav>

@@ -25,8 +25,11 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <main style="padding: 40px 24px 80px;">
+    <main>
       <%= render 'shared/messages' %>
+      <% if Rails.env.development? %>
+        <%= render 'shared/session_debug' %>
+      <% end %>
       <%= yield %>
     </main>
     <%= render 'shared/footer' %>
