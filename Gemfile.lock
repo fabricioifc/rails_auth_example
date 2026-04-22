@@ -244,6 +244,9 @@ GEM
     omniauth-oauth2 (1.9.0)
       oauth2 (>= 2.0.2, < 3)
       omniauth (~> 2.0)
+    omniauth-twitter2 (1.1.0)
+      omniauth
+      omniauth-oauth2 (~> 1.0)
     ostruct (0.6.3)
     parallel (2.0.1)
     parser (3.3.11.1)
@@ -451,6 +454,7 @@ DEPENDENCIES
   kamal
   omniauth
   omniauth-github
+  omniauth-twitter2
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)

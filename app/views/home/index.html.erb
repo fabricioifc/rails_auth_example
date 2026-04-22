@@ -5,7 +5,8 @@
   <% if session[:user_id] %>
     <p>Você já está logado. <a href="/protected">Acessar área protegida</a></p>
   <% else %>
-    <p>Faça login com sua conta GitHub para continuar.</p>
+    <p>Faça login para continuar.</p>
     <a href="/auth/github" class="btn btn--dark">Login com GitHub</a>
+    <a href="/auth/twitter2" class="btn btn--x">Login com X</a>
   <% end %>
 </div>

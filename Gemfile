@@ -68,4 +68,5 @@ end
 gem "bcrypt", "~> 3.1.7"
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'omniauth-twitter2'
 gem 'jwt'

@@ -9,7 +9,7 @@
         <th>#</th>
         <th>Nome</th>
         <th>E-mail</th>
-        <th>Provider</th>
+        <th>Providers conectados</th>
         <th>Criado em</th>
       </tr>
     </thead>
@@ -19,7 +19,7 @@
           <td><%= user.id %></td>
           <td><%= user.name %></td>
           <td><%= user.email %></td>
-          <td><%= user.provider %></td>
+          <td><%= user.linked_providers.join(', ') %></td>
           <td><%= user.created_at.strftime('%d/%m/%Y %H:%M') %></td>
         </tr>
       <% end %>
