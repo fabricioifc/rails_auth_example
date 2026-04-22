@@ -24,6 +24,7 @@ services:
       DATABASE_NAME: ${DATABASE_NAME:-rails_auth_development}
       GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID}
       GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
     depends_on:
       - db
 
