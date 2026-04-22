@@ -5,13 +5,4 @@ Rails.application.config.middleware.use OmniAuth::Builder do
          callback_path: "/auth/twitter2/callback"
 end
 
-OmniAuth.config.full_host = lambda do |env|
-  configured_host = ENV['APP_HOST'].to_s.strip
-  use_configured_host = configured_host.present? && Rails.env.production?
-  next configured_host if use_configured_host
-
-  scheme = env['HTTP_X_FORWARDED_PROTO'] || env['rack.url_scheme'] || 'http'
-  host = env['HTTP_X_FORWARDED_HOST'] || env['HTTP_HOST']
-  "#{scheme}://#{host}"
-end
 OmniAuth.config.allowed_request_methods = [:get, :post]
