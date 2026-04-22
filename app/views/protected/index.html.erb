@@ -1,21 +1,24 @@
-<h1>Área Protegida</h1>
-<p>Bem-vindo, <%= @current_user.name %>!</p>
-<%= button_to 'Sair', '/logout', method: :delete %>
+<div class="layout-2col">
 
-<section class="csrf-demo">
-	<h2>Demonstração de CSRF</h2>
-	<p>
-		Este formulário envia um POST para a aplicação. O Rails adiciona automaticamente
-		o <code>authenticity_token</code> para validar a origem da requisição.
-	</p>
+  <div>
+    <h1>Área Protegida</h1>
+    <p>Bem-vindo, <%= @current_user.name %>!</p>
+    <%= button_to 'Sair', '/logout', method: :delete, class: "btn btn--dark" %>
+  </div>
 
-	<%= form_with url: protected_csrf_demo_path, method: :post, local: true, data: { turbo: true }, class: "csrf-demo__form" do |f| %>
-		<div class="csrf-demo__field">
-			<%= f.label :demo_text, "Texto de exemplo" %>
-			<%= f.text_field :demo_text, placeholder: "Digite algo para enviar", required: true %>
-		</div>
+  <div>
+    <section class="csrf-demo">
+      <h2>Demonstração de CSRF</h2>
 
-		<%= f.submit "Enviar POST", class: "btn btn--dark" %>
-	<% end %>
-</section>
+      <%= form_with url: protected_csrf_demo_path, method: :post, local: true, class: "csrf-demo__form" do |f| %>
+        <div class="csrf-demo__field">
+          <%= f.label :demo_text, "Texto de exemplo" %>
+          <%= f.text_field :demo_text, required: true %>
+        </div>
 
+        <%= f.submit "Enviar POST", class: "btn btn--dark" %>
+      <% end %>
+    </section>
+  </div>
+
+</div>
