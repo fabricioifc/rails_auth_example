@@ -1,7 +1,7 @@
 <% data = session_debug_data %>
 
-<section class="session-debug" aria-label="Painel didático da sessão">
-  <h2 class="session-debug__title">Painel didático da sessão</h2>
+<section class="session-debug" aria-label="Painel da sessão">
+  <h2 class="session-debug__title">Painel da sessão</h2>
 
   <dl class="session-debug__grid">
     <dt>Autenticado</dt>
@@ -15,6 +15,15 @@
 
     <dt>E-mail</dt>
     <dd><%= data[:user_email].presence || 'nil' %></dd>
+
+    <dt>Cookie key</dt>
+    <dd><%= data[:session_cookie_key] %></dd>
+
+    <dt>TTL configurado</dt>
+    <dd><%= data[:session_ttl_minutes] ? "#{data[:session_ttl_minutes]} minutos" : 'sessão de navegador' %></dd>
+
+    <dt>Chaves da sessão</dt>
+    <dd><%= data[:session_keys].join(', ') %></dd>
 
     <dt>Host da requisição</dt>
     <dd><%= data[:request_host] %></dd>
