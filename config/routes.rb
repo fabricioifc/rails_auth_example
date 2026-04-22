@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     delete '/logout', to: 'sessions#destroy'
 
     get '/protected', to: 'protected#index'
+    post '/protected/csrf-demo', to: 'protected#csrf_demo', as: :protected_csrf_demo
     get '/users', to: 'users#index'
 end

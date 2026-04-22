@@ -214,6 +214,47 @@ main {
 }
 
 /* ============================================================
+   Protected / CSRF demo
+   ============================================================ */
+.csrf-demo {
+  margin: 24px 0;
+  max-width: 640px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.csrf-demo h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.csrf-demo p {
+  margin: 0 0 14px;
+  color: #444;
+}
+
+.csrf-demo__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.csrf-demo__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.csrf-demo__field input {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+/* ============================================================
    Users table
    ============================================================ */
 .page-title {
