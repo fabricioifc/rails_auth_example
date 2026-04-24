@@ -14,12 +14,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-    root "home#index"
-    get 'auth/:provider/callback', to: 'sessions#create'
-    get 'auth/failure', to: redirect('/')
-    delete '/logout', to: 'sessions#destroy'
+  root "home#index"
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  delete '/logout', to: 'sessions#destroy'
 
-    get '/protected', to: 'protected#index'
-    post '/protected/csrf-demo', to: 'protected#csrf_demo', as: :protected_csrf_demo
-    get '/users', to: 'users#index'
+  get '/protected', to: 'protected#index'
+  post '/protected/csrf-demo', to: 'protected#csrf_demo', as: :protected_csrf_demo
+  get '/users', to: 'users#index'
+  get '/pokemons', to: 'pokemons#index'
+  post '/pokemons', to: 'pokemons#create'
+
 end
