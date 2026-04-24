@@ -7,3 +7,16 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+pokemons = [
+  { name: "Squirtle" },
+  { name: "Bulbasaur" },
+  { name: "Charmander" },
+  { name: "Pikachu" }
+]
+
+pokemons.each do |pokemon|
+  Pokemon.find_or_create_by!(name: pokemon[:name])
+end
+
+puts "Pokemons criados com sucesso!"

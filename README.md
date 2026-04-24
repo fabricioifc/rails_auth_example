@@ -930,4 +930,6 @@ docker compose exec web rails c
 docker compose run --rm web rails db:migrate
 docker compose run --rm web rails db:migrate:status
 docker compose up -d --force-recreate web
+# seed
+docker compose run --rm web rails db:seed
 ```
