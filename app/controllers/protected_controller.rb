@@ -7,7 +7,10 @@ class ProtectedController < ApplicationController
   def csrf_demo
     demo_text = params[:demo_text].to_s.strip
     csrf_token = form_authenticity_token
-    csrf_token_valid = valid_authenticity_token?(session, params[:authenticity_token])
+    csrf_token_valid = valid_authenticity_token?(
+      session, 
+      params[:authenticity_token]
+    )
     if csrf_token_valid
       notice = demo_text.present? ? "POST recebido com CSRF token válido: #{demo_text}" : "POST recebido com CSRF token válido."
       redirect_to '/protected', notice: notice
