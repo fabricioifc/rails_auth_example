@@ -1,17 +1,11 @@
 <h1>Meus Pokemons</h1>
-<ul>
-  <% @pokemons.each do |pokemon| %>
-    <li><%= pokemon.name %></li>
-  <% end %>
-</ul>
 
-<h2>Adicionar Novo Pokemon</h2>
-<%= form_with model: Pokemon.new, local: true do |f| %>
-    <div>
-        <%= f.label :name, "Nome do Pokemon" %>
-        <%= f.text_field :name %>
-    </div>
-    <div>
-        <%= f.submit "Adicionar Pokemon" %>
-    </div>
+<%= turbo_frame_tag "pokemons" do %>
+  <%= render @pokemons %>
+<% end %>
+
+<h2>Novo Pokemon</h2>
+
+<%= turbo_frame_tag "new_pokemon" do %>
+  <%= render "form", pokemon: @pokemon %>
 <% end %>

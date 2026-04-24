@@ -1,0 +1,5 @@
+<%= turbo_frame_tag dom_id(@pokemon) do %>
+  <%= render "form", pokemon: @pokemon %>
+
+  <%= link_to "Cancelar", pokemons_path %>
+<% end %>

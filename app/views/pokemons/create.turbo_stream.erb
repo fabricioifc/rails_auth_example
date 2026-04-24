@@ -1,0 +1,7 @@
+<%= turbo_stream.append "pokemons" do %>
+  <%= render @pokemon %>
+<% end %>
+
+<%= turbo_stream.replace "new_pokemon" do %>
+  <%= render "form", pokemon: Pokemon.new %>
+<% end %>

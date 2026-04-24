@@ -22,7 +22,10 @@ Rails.application.routes.draw do
   get '/protected', to: 'protected#index'
   post '/protected/csrf-demo', to: 'protected#csrf_demo', as: :protected_csrf_demo
   get '/users', to: 'users#index'
-  get '/pokemons', to: 'pokemons#index'
-  post '/pokemons', to: 'pokemons#create'
+  
+  # podemos usar resources para criar as rotas de pokemons automaticamente
+  # get '/pokemons', to: 'pokemons#index'
+  # post '/pokemons', to: 'pokemons#create'
+  resources :pokemons
 
 end
